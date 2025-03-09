@@ -10,3 +10,25 @@ body {
     color-scheme: dark;
   }
 }
+
+
+@keyframes underlineLoop {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  animation: underlineLoop 1.5s infinite linear;
+}
